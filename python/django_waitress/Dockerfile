@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 3000
 
-CMD gunicorn --bind 0.0.0.0:3000 --reuse-port --workers $(nproc) app.wsgi
+CMD waitress-serve --host=0.0.0.0 --port=3000 --threads $(nproc) app.wsgi:application

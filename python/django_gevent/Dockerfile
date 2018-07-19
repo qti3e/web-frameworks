@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 3000
 
-CMD gunicorn --bind 0.0.0.0:3000 --reuse-port --workers $(nproc) app.wsgi
+CMD gunicorn --bind 0.0.0.0:3000 --worker-class gunicorn.workers.ggevent.GeventWorker --reuse-port --workers $(nproc) app.wsgi
