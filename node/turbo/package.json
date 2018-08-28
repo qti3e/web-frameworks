@@ -1,0 +1,13 @@
+{
+  "author": {
+    "name": "Parsa Ghadimi",
+    "email": "me@qti3e.com",
+    "url": "http://qti3e.com"
+  },
+  "dependencies": {
+    "@rayo/storm": "^1.1.0",
+    "physical-cpu-count": "^2.0.0",
+    "polka": "^0.4.0",
+    "turbo-http": "^0.3.0"
+  }
+}
