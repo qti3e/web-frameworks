@@ -1,7 +1,15 @@
-const physicalCpuCount = require('physical-cpu-count');
-const { Storm } = require("@rayo/storm");
+const polka = require('polka');
+const turbo = require('turbo-http');
+const server = turbo.createServer();
 
-new Storm(() => require("./http"), {
-  workers: physicalCpuCount,
-  monitor: false
-});
+polka({ server })
+  .get('/', (req, res) => {
+    res.end('');
+  })
+  .get('/user/:id', (req, res) => {
+    res.end(req.params.id);
+  })
+  .post('/user', (req, res) => {
+    res.end('');
+  })
+  .listen(3000);

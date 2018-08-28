@@ -4,7 +4,7 @@ RUN npm -g install pm2
 
 WORKDIR /usr/src/app
 
-COPY app.js http.js package.json ./
+COPY app.js package.json ./
 
 RUN npm install
 
